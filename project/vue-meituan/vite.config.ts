@@ -1,10 +1,13 @@
+// import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import postCssPxToRem from "postcss-pxtorem";
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
+
   css: {
     postcss: {
       plugins: [
@@ -14,5 +17,13 @@ export default defineConfig({
         }),
       ],
     },
+  },
+
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src')
+      // '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"]
   }
 })

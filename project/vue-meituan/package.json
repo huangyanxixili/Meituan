@@ -11,7 +11,8 @@
   "dependencies": {
     "amfe-flexible": "^2.2.1",
     "postcss-pxtorem": "^6.1.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@types/postcss-pxtorem": "^6.1.0",

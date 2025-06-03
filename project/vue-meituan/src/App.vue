@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  <div class="app">这是app组件</div>
+  <div class="app">
+    <router-view />
+  </div>
 </template>
 
 <style>
