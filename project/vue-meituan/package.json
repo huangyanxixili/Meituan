@@ -12,6 +12,7 @@
     "amfe-flexible": "^2.2.1",
     "less": "^4.3.0",
     "less-loader": "^7.3.0",
+    "pinia": "^3.0.3",
     "postcss-pxtorem": "^6.1.0",
     "unplugin-vue-components": "^28.7.0",
     "vant": "^4.9.19",

@@ -1,18 +1,24 @@
 <template>
     <div class="home">
-        <div>首页</div>
-        <van-button type="primary" >点击</van-button>
+        <div class="content"></div>
+        <Footer />
     </div>
 </template>
 
 <script setup>
+import Footer from '@/components/HomeFooter.vue'
+
 
 </script>
 
-<style lang="less" scoped>
+<style  scoped>
 .home {
-    div {
-        color: pink;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    .content {
+        flex: 1;
+        overflow-y: auto;
     }
 }
 </style>

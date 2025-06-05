@@ -8,6 +8,10 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
+        redirect: '/home'
+    },
+    {
+        path: '/home',
         name: 'home',
         meta: {
             title: '首页',
@@ -50,7 +54,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    document.title = to.meta.title as string
+    document.title = (to.meta.title as string) || '默认标题'
     next()
 })
 
