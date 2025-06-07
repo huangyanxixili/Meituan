@@ -19,7 +19,7 @@ export default defineConfig({
     postcss: {
       plugins: [
         postCssPxToRem({
-          rootValue: 16,// 换算为 1rem = 16px 
+          rootValue: 37.5,// 换算为 1rem = 37.5px 
           propList: ["*"],// 要转换的属性（'*'代表全部属性）
         }),
       ],
