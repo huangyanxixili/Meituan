@@ -2,27 +2,55 @@
     <div class="home">
         <div class="content">
             <!-- 头部 -->
-            <div class="header">
+            <header class="header">
                 <div class="text">外卖</div>
                 <div class="location">
                     <van-icon name="location-o" />
                     <span>地址</span>
                     <van-icon name="arrow" />
                 </div>
-            </div>
+            </header>
             <!-- 主题内容 -->
-            <div class="main">
+            <main class="main">
                 <div class="main-bcg">
-                    <div class="search">
+                    <!-- 搜索框 -->
+                    <section class="search">
                         <input type="text">
                         <div class="search-text">搜索</div>
-                    </div>
-                    <div class="sort">
-                        <div class="big-sort"></div>
-                        <div class="small-sort"></div>
-                    </div>
+                    </section>
+                    <!-- 分类 -->
+                    <section class="sort">
+                        <div class="big-sort">
+                            <div
+                                v-for="item in bigSortStore"
+                                :key="item.title"
+                                class="nav-item"
+                            >
+                                <svg class="icon" aria-hidden="true">
+                                    <use :xlink:href="['#' + item.icon]"></use>
+                                </svg>
+                                <div>
+                                    {{ item.title }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="small-sort">
+                            <div
+                                v-for="item in smallSortStore"
+                                :key="item.title"
+                                class="nav-item"
+                            >
+                                <svg class="icon" aria-hidden="true">
+                                    <use :xlink:href="['#' + item.icon]"></use>
+                                </svg>
+                                <div>
+                                    {{ item.title }}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </div>
+            </main>
         </div>
         <Footer />
     </div>
@@ -30,6 +58,10 @@
 
 <script setup>
 import Footer from '@/components/Footer.vue'
+import { useHomeStore } from "@/stores/homeStore.ts";
+const bigSortStore = useHomeStore().bigSortStore;
+const smallSortStore = useHomeStore().smallSortStore;
+
 
 </script>
 
@@ -38,6 +70,7 @@ import Footer from '@/components/Footer.vue'
     display: flex;
     flex-flow: column;
     height: 100%;
+    font-size: 12px;
     .content {
         flex: 1;
         overflow-y: auto;
@@ -83,6 +116,41 @@ import Footer from '@/components/Footer.vue'
                         line-height: 32px;
                         font-size: 14px;
                         text-align: center;
+                    }
+                }
+                .sort {
+                    padding: 20px 0;
+                    .big-sort {
+                        display: flex;
+                        .nav-item {
+                            display: flex;
+                            flex: 1;
+                            justify-self: center;
+                            flex-flow: column;
+                            align-items: center;
+                            .icon {
+                                width: 50px;
+                                height: 50px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                    .small-sort {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-top: 20px;
+                        .nav-item {
+                            display: flex;
+                            justify-content: center;
+                            flex-flow: column;
+                            align-items: center;
+                            width: 20%;
+                            .icon {
+                                width: 30px;
+                                height: 30px;
+                                margin: 10px;
+                            }
+                        }
                     }
                 }
             }

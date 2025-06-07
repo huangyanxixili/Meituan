@@ -20,8 +20,8 @@
 </template>
 
 <script setup>
-import { useFooterStore } from "@/stores/homeStore.ts";
-const footerStore = useFooterStore().footerStore;
+import { useHomeStore } from "@/stores/homeStore.ts";
+const footerStore = useHomeStore().footerStore;
 
 function getRoutePath(title) {
     return `/${title}`;
