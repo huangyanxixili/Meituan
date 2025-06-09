@@ -50,6 +50,18 @@
                         </div>
                     </section>
                 </div>
+                <!-- Tab列表 -->
+                <van-tabs v-model:active="active" class="van-tabs">
+                    <van-tab 
+                        v-for="(item, index) in cententNavListStore" 
+                        :title="item.tab" 
+                        :key="index"
+                    >
+                        <nav-list 
+                            :navList="item.data"
+                        />
+                    </van-tab>
+                </van-tabs>
             </main>
         </div>
         <Footer />
@@ -59,9 +71,13 @@
 <script setup>
 import Footer from '@/components/Footer.vue'
 import { useHomeStore } from "@/stores/homeStore.ts";
+import NavList from "./components/NavList.vue";
+import { reactive, toRefs, ref } from 'vue';
+
 const bigSortStore = useHomeStore().bigSortStore;
 const smallSortStore = useHomeStore().smallSortStore;
-
+const cententNavListStore = useHomeStore().cententNavListStore;
+const active = ref(0);
 
 </script>
 
@@ -154,7 +170,16 @@ const smallSortStore = useHomeStore().smallSortStore;
                     }
                 }
             }
+            .van-tabs {
+                padding: 0 20px 10px;
+
+            }
         }
     }
 }
+
+/deep/ .van-tabs__wrap {
+    border-radius: 10px;
+}
+
 </style>

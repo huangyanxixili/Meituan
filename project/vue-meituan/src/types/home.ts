@@ -13,3 +13,14 @@ export type SmallSortStoreItem = {
     title: string,
     icon: string,
 }
+
+export type ContentNavListStoreItem = {
+    tab: string;
+    data: {
+        pic: string;
+        title: string;
+        sales: string;
+        price: string;
+        label: string[];
+    }[];
+};
