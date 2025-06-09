@@ -1,5 +1,5 @@
 <template>
-    <div class="item">
+    <div class="item" @click="toStore">
         <img :src="itemContent.pic" />
         <div class="item-right">
             <div class="title">{{ itemContent.title }}</div>
@@ -19,6 +19,14 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const toStore = () => {
+    router.push({
+        path: '/store'
+    })
+}
 
 const props = defineProps({
     itemContent: {

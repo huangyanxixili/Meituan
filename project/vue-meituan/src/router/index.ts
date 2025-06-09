@@ -46,6 +46,15 @@ const routes: RouteRecordRaw[] = [
         },
         component: () => import('@/views/shoppingCart/Cart.vue')
     },
+    {
+        path: '/store',
+        name: 'store',
+        meta: {
+            title: '店铺',
+            cache: true
+        },
+        component: () => import('@/views/store/store.vue')
+    },
 ]
 
 const router = createRouter({
@@ -53,7 +62,7 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
     document.title = (to.meta.title as string) || '默认标题'
     next()
 })
