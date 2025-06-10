@@ -8,6 +8,17 @@
                     {{ title }}
                     <img :src="img" alt="" class="store-img">
                 </div>
+                <van-tabs color="#ffc400">
+                    <van-tab 
+                        v-for="(item, index) in tabStore"
+                        :title="item.name"
+                    >
+                        <FoodList 
+                            :index="index" 
+                            :foodData="item.data"
+                        />
+                    </van-tab>
+                </van-tabs>
             </div>
         </div>
     </div>
@@ -15,7 +26,11 @@
 
 <script setup>
 import Header from "@/components/Header.vue";
+import FoodList from "./components/FoodList.vue";
+import { useStoreStore } from "@/stores/storeStore.ts";
 import { reactive, toRefs } from "vue";
+
+const tabStore = useStoreStore().tabStore;
 
 let data = reactive({
     title: "酸菜鱼",
