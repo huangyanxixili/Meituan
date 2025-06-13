@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片展示</title>
+    <style type="text/css">
+        /* 设置容器宽度 */
+        .container {
+            width: 500px;
+            margin: auto;
+        }
+
+        /* 列表去除默认样式 */
+        #album {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* 每个列表项设置为等宽，并添加边框 */
+        #album li {
+            width: calc(25% - 10px); /* 减去间距 */
+            box-sizing: border-box;
+            border: 2px solid #4CAF50; /* 绿色边框 */
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        /* 图片居中并设置固定尺寸 */
+        #album img {
+            display: block;
+            margin: auto;
+            width: 68px;
+            height: 54px;
+        }
+
+        /* 文字样式 */
+        #album li span {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">	
+    <ul id="album">
+        <li><img src="image/1.jpg" alt="海底"/><span>海底</span></li>
+        <li><img src="image/2.jpg" alt="花园"/><span>花园</span></li>
+        <li><img src="image/3.jpg" alt="雪域"/><span>雪域</span></li>
+        <li><img src="image/4.jpg" alt="菠萝"/><span>菠萝</span></li>
+        <li><img src="image/5.jpg" alt="花朵"/><span>花朵</span></li>
+        <li><img src="image/6.jpg" alt="波浪"/><span>波浪</span></li>
+        <li><img src="image/7.jpg" alt="别墅"/><span>别墅</span></li>
+        <li><img src="image/8.jpg" alt="草坪"/><span>草坪</span></li>
+        <li><img src="image/9.jpg" alt="沙漠"/><span>沙漠</span></li>
+        <li><img src="image/10.jpg" alt="海港"/><span>海港</span></li>
+        <li><img src="image/11.jpg" alt="原野"/><span>原野</span></li>
+        <li><img src="image/12.jpg" alt="大道"/><span>大道</span></li>
+    </ul>
+</div>
+</body>
+</html>
